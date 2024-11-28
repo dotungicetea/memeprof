@@ -1,8 +1,8 @@
 import { S3Client } from "@aws-sdk/client-s3";
 import { Upload } from "@aws-sdk/lib-storage";
 
-const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+const accessKeyId = process.env.AMA_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AMA_SECRET_ACCESS_KEY;
 
 const uploadImage = async (userId: string, combinedImageBuffer: any) => {
   console.log("Uploading image", userId);
