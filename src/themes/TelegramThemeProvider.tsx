@@ -52,21 +52,13 @@ const TelegramThemeProvider: FC<Props> = ({ children }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          // body: JSON.stringify({
-          //   userId: String(tgUser?.user?.id),
-          //   referrer: referrer ? String(referrer) : null,
-          //   first_name: tgUser?.user?.first_name,
-          //   last_name: tgUser?.user?.last_name,
-          //   username: tgUser?.user?.username,
-          //   language_code: tgUser?.user?.language_code,
-          // }),
           body: JSON.stringify({
-            userId: "1484837473",
-            referrer: null,
-            first_name: "Tung",
-            last_name: "Do",
-            username: "@domanhtung",
-            language_code: "en",
+            userId: String(tgUser?.user?.id),
+            referrer: referrer ? String(referrer) : null,
+            first_name: tgUser?.user?.first_name,
+            last_name: tgUser?.user?.last_name,
+            username: tgUser?.user?.username,
+            language_code: tgUser?.user?.language_code,
           }),
         });
 
