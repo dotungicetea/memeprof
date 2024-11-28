@@ -140,11 +140,11 @@ const ImageToMeme = () => {
       return;
     }
 
-    if (step === "options") {
-      await handleGenerate(prompt as string);
+    // if (step === "options") {
+    //   await handleGenerate(prompt as string);
 
-      return;
-    }
+    //   return;
+    // }
 
     if (genMeme) {
       await handlePublish();

@@ -129,11 +129,11 @@ const Memes = () => {
     } else {
       const currentPrompt = inputRef?.current?.value?.trim();
 
-      if (currentPrompt) {
-        handleGenerate(currentPrompt);
-      } else {
-        show("Please enter a prompt", { variant: "error" });
-      }
+      // if (currentPrompt) {
+      //   handleGenerate(currentPrompt);
+      // } else {
+      //   show("Please enter a prompt", { variant: "error" });
+      // }
     }
   };
 
