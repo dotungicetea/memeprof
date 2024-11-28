@@ -1,0 +1,57 @@
+.menu-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+
+  &__title {
+    margin-left: 0.5rem;
+    color: $text_color;
+    font-size: 1rem !important;
+  }
+
+  &__icon {
+    svg {
+      height: 1.75rem;
+    }
+  }
+
+  &__profile-icon {
+    svg {
+      height: 2.25rem;
+      width: 2.25rem;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  &__navbar {
+    @apply flex items-center;
+  }
+
+  &__airdrop-button {
+    background-color: #a1df24;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    &:hover {
+      background-color: darken(#a1df24, 10%);
+    }
+  }
+}

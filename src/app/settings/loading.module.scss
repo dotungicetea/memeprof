@@ -1,0 +1,22 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__general {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 120px;
+  }
+
+  &__help {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px;
+  }
+}

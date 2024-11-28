@@ -1,0 +1,46 @@
+@import "../../styles/colors.scss";
+
+.icon {
+  display: flex;
+  height: 100%;
+
+  &--xs {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &--sm {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &--md {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &--lg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--primary {
+    color: $button_color;
+    fill: $button_color;
+  }
+
+  &--text {
+    color: $text_color;
+    fill: $text_color;
+  }
+
+  &--hint {
+    color: $hint_color;
+    fill: $hint_color;
+  }
+
+  &--cta {
+    color: $coin_color;
+    fill: $coin_color;
+  }
+}

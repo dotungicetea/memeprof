@@ -1,0 +1,24 @@
+@import "../../../styles/colors.scss";
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 5px;
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    &--avatar {
+      border-radius: 50%;
+    }
+
+    &--title {
+      font-weight: 400;
+    }
+  }
+}

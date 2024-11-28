@@ -1,0 +1,7 @@
+@import "../../styles/colors.scss";
+
+.card {
+  background-color: $bg_color;
+  border-radius: $border_radius;
+  box-shadow: $box_shadow;
+}

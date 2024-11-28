@@ -1,0 +1,40 @@
+@import "../../styles/colors.scss";
+
+.field {
+  width: 100%;
+  position: relative;
+
+  &__input {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 1rem 0.5rem;
+    background-color: $bg_color;
+    border: none;
+    color: $text_color;
+    font-size: small;
+
+    &--divider {
+      border-bottom: 1px solid $secondary_bg_color;
+    }
+  }
+
+  &__input:focus {
+    outline: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 1.7rem;
+    color: $error_color;
+    font-size: 0.75rem;
+    z-index: 1;
+  }
+}

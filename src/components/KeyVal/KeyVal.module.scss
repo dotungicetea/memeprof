@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+
+.keyval {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0;
+
+  &__label {
+    font-weight: bold;
+    color: $hint_color;
+
+    &::after {
+      content: ":";
+    }
+  }
+
+  &__value {
+    font-style: italic;
+    color: $text_color;
+  }
+
+  &__currency {
+    font-weight: bold;
+    color: $hint_color;
+
+    &::before {
+      content: " ";
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.root {
+  min-height: 100vh;
+  padding: 0.5rem;
+  padding-top: 1rem;
+
+  &__item {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon {
+      width: 45px !important;
+      height: 45px !important;
+      position: relative;
+    }
+
+    &__title {
+      color: $section_header_text_color;
+      margin-top: 0.5rem;
+    }
+
+    &__desc {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.gpt {
+  &__uploader {
+    @apply h-44 my-2 flex items-center justify-center bg-bg_dark_primary rounded-xl;
+  }
+}
+
+.meme {
+  @apply p-2;
+
+  &__image {
+    @apply w-full object-contain relative;
+
+    height: 500px;
+  }
+
+  &__actions {
+    @apply flex justify-between items-center mt-2 gap-4;
+
+    &__button {
+      @apply rounded-full #{!important};
+    }
+  }
+}

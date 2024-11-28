@@ -1,0 +1,38 @@
+.banner {
+  height: 130px !important;
+
+  &__wrapper {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__action {
+  }
+
+  font-size: 0.9rem;
+  border-radius: 1.15rem;
+  // background: linear-gradient(to right, #ffd194, $coin_color);
+  // background: linear-gradient(to right, $secondary, $coin_color);
+  // backdrop-filter: blur(13.5px);
+  // background-color: white;
+  // mix-blend-mode: overlay;
+  box-sizing: border-box;
+  @apply flex flex-col justify-end px-4 py-2;
+
+  &__content {
+    @apply bg-[#141D02AD] rounded-full px-2 py-1.5;
+  }
+
+  &__image {
+    @apply relative;
+
+    position: relative;
+    width: 100px !important;
+    width: min-content;
+    height: 100px;
+  }
+}

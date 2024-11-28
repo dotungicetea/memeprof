@@ -1,0 +1,9 @@
+.img2meme {
+  padding: 0.5rem;
+  min-height: 100vh;
+
+  &--show {
+    background-repeat: no-repeat !important;
+    background-size: "contain";
+  }
+}

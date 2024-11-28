@@ -1,0 +1,12 @@
+@import "../../styles/colors.scss";
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $hint_color;
+  margin: 0.4rem 0;
+
+  &--no-line {
+    background-color: transparent;
+  }
+}

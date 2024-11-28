@@ -1,0 +1,8 @@
+.meme_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+
+  @apply px-2;
+}

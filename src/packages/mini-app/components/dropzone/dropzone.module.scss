@@ -1,0 +1,21 @@
+@import "@styles/colors.scss";
+
+.dz {
+  width: 100%;
+  min-height: 10rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+
+  @apply bg-bg_color;
+
+  &__text {
+    @apply text-center flex flex-col items-center justify-center;
+  }
+}

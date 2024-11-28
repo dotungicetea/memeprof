@@ -1,0 +1,18 @@
+@import "@/styles/colors.scss";
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__daily {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__divider {
+    color: $text_color;
+  }
+}

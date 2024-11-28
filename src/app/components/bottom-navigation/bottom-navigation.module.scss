@@ -1,0 +1,33 @@
+.bottom-navigation {
+  @apply bg-[#001302] border-t border-primary fixed w-full p-4 z-50;
+  @apply bottom-0 flex justify-around items-center px-2 rounded-t-3xl left-1/2 transform -translate-x-1/2 gap-20;
+
+  &__wrapper {
+    @apply flex items-center justify-evenly bg-tertiary_bg_color rounded-3xl py-2;
+  }
+
+  &__link {
+    @apply flex flex-col items-center justify-center text-[9px] capitalize;
+
+    &--active {
+      @apply text-primary;
+    }
+  }
+
+  &__icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    flex: 1;
+    fill: #d4d4d4 !important;
+    stroke: #d4d4d4;
+
+    svg: {
+      width: 3.5rem !important;
+      height: 3.5rem !important;
+    }
+
+    &--active {
+      fill: $primary !important;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.text-elipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  color: $hint_color;
+  margin: 0.125rem 0;
+
+  &--1 {
+    -webkit-line-clamp: 1;
+  }
+
+  &--2 {
+    -webkit-line-clamp: 2;
+  }
+
+  &--3 {
+    -webkit-line-clamp: 3;
+  }
+
+  &--4 {
+    -webkit-line-clamp: 4;
+  }
+
+  &--5 {
+    -webkit-line-clamp: 5;
+  }
+
+  &--trim {
+    -webkit-line-clamp: unset;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--text {
+    color: $text_color;
+  }
+
+  &--hint {
+    color: $hint_color;
+  }
+
+  &--link {
+    color: $link_color;
+  }
+
+  &--button {
+    color: $button_color;
+  }
+
+  &--button-text {
+    color: $button_text_color;
+  }
+
+  &--accent-text {
+    color: $accent_text_color;
+  }
+}

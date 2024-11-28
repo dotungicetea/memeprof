@@ -1,0 +1,27 @@
+@import "@styles/colors.scss";
+
+.variations {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background-color: $secondary_bg_color !important;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__item {
+    margin-top: 0.25rem;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    outline: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}

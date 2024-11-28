@@ -1,0 +1,18 @@
+@import "@styles/colors.scss";
+
+.social {
+  &__input {
+    background-color: $secondary_bg_color;
+    padding: 10px 0 10px 16px;
+    color: $text_color;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $coin_color;
+    }
+  }
+}

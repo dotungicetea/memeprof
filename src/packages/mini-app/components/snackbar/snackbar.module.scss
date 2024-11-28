@@ -1,0 +1,55 @@
+@import "@styles/colors.scss";
+
+.snackbar {
+  background-color: $bg_color;
+  color: $text_color;
+
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 9999;
+  transform: translateX(-50%);
+
+  text-align: center;
+  animation: slideInFromTop 0.3s ease-in-out 2.7s forwards;
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    background-color: $header_bg_color;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+    padding: 0.25rem;
+  }
+
+  &__icon {
+    &--success {
+      fill: $success_color !important;
+      color: $success_color !important;
+    }
+
+    &--error {
+      fill: $destructive_text_color !important;
+      color: $destructive_text_color !important;
+    }
+
+    &--info {
+      fill: $accent_text_color !important;
+    }
+  }
+
+  &__title {
+    font-size: 0.9rem !important;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+}

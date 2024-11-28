@@ -1,0 +1,83 @@
+.contest-item {
+  border-radius: 0.5rem;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12.5px);
+
+  // gradient from 0% A1DF24 to 100% 000000
+
+  &__header {
+    min-height: 145px;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    &__button {
+      padding: 0.25rem 0.5rem;
+      width: auto !important;
+      margin-left: auto;
+
+      &--active {
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 255, 0, 0.5),
+          rgba(0, 255, 255, 0.5)
+        ) !important;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0.5rem;
+  }
+
+  &__name {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__description {
+    font-size: 0.85rem !important;
+
+    @apply mt-4;
+  }
+
+  &__footer {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent !important;
+    box-shadow: none !important;
+
+    @apply bg-transparent shadow-none;
+
+    padding: 0.25rem;
+
+    &__title {
+      // text-align: center;
+      color: yellow !important;
+    }
+
+    &__card {
+      @apply flex items-center gap-2;
+    }
+
+    &__participants {
+      @apply flex items-center gap-2;
+    }
+  }
+
+  &__timer {
+    @apply flex items-center gap-2 ml-auto whitespace-nowrap flex-1 justify-end;
+    background: transparent !important;
+  }
+
+  &__avatar {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,29 @@
+.dot {
+  @apply bg-white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* end triple dot animation */

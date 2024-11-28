@@ -1,0 +1,11 @@
+.flex {
+  width: 100%;
+  display: grid;
+  flex-direction: row;
+  gap: 10px;
+  .flex-column {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+}

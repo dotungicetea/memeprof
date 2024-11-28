@@ -1,0 +1,32 @@
+@import "../../../styles/colors.scss";
+
+.memeskeleton {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__image {
+    background-color: $secondary_bg_color;
+    border-radius: 12px;
+  }
+
+  &__btn {
+    background-color: $secondary_bg_color;
+    border-radius: 12px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__extra-buttons {
+    display: flex;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,109 @@
+@import "../../styles/colors.scss";
+.typography {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $text_color;
+
+  &--h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  &--h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  &--h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &--h4 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &--h5 {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  &--h6 {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  &--subtitle1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &--subtitle2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &--body1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &--body2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &--button {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &--caption {
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  &--overline {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &--sm {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &--md {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  &--lg {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &--xs {
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--primary {
+    color: $button_color;
+  }
+
+  &--error {
+    color: $error_color;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

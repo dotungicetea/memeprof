@@ -1,0 +1,45 @@
+.search {
+  padding: 0.5rem;
+
+  &__tablist {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    border-bottom: 1px solid $hint-color;
+
+    &--tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      font-size: 15px;
+      font-weight: 500;
+      height: 35px;
+      background-color: transparent;
+      border: none;
+      color: $text_color;
+    }
+
+    &--tab[data-state="active"] {
+      color: $button_color;
+      box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  &__action {
+  }
+
+  &__tabcontent {
+    padding-top: 0.5rem;
+  }
+}

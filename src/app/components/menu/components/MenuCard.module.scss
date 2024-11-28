@@ -1,0 +1,44 @@
+@import "@styles/colors.scss";
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: $box_shadow;
+  cursor: pointer;
+
+  /* Bg 10% */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6.75px);
+
+  @apply rounded-xl p-3;
+
+  /* Rectangle 536 */
+
+  &__container {
+    // background: $primary;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* newsfeed */
+
+    @apply rounded-full;
+  }
+
+  &__title {
+    color: $text_color;
+    margin-top: 5px;
+    font-weight: 500;
+
+    @apply text-base mt-3 truncate whitespace-nowrap;
+  }
+}

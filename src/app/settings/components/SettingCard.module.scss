@@ -1,0 +1,28 @@
+@import "@styles/colors.scss";
+
+.setting {
+  &__card {
+    width: 100%;
+    background-color: $bg_color;
+    color: $text_color;
+    box-shadow: $box_shadow;
+    border-radius: 10px;
+    padding: 0 12px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  &__icon-container {
+    border-radius: 10px;
+    padding: 6px;
+  }
+}

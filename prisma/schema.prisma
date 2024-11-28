@@ -1,0 +1,516 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String  @id @default(uuid())
+  firstName String
+  lastName  String?
+  username  String? @unique
+
+  languageCode String?
+  status       userStatus         @default(ACTIVE)
+  role         Role               @default(USER)
+  isVerified   VerificationStatus @default(IDLE)
+
+  referredUsers  User[]        @relation("ReferredUsers")
+  referredById   String?
+  referredBy     User?         @relation("ReferredUsers", fields: [referredById], references: [id])
+  referralStatus ReferalStatus @default(IDLE)
+
+  insta_profile_url String?
+  x_profile_url     String?
+
+  point     Point[]
+  memes     Meme[]
+  favorites Meme[]    @relation("Favorites")
+  likes     Like[]
+  comments  Comment[]
+  followers User[]    @relation("Followers")
+  following User[]    @relation("Followers")
+  memeViews Meme[]    @relation("MemeViews")
+
+  level                  Level                   @default(NOOB)
+  verifications          Verification[]
+  contestTaskSubmissions ContestTaskSubmission[]
+  pendingRewards         PendingReward[]
+  popupsSeen             PopupSeen[]
+  pendingMissionRewards  PendingMissionReward[]
+
+  totalBalance        Int       @default(0)
+  rewardRate          Int       @default(100)
+  rewardLastClaimedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Point {
+  id String @id @default(uuid())
+
+  amount      Int    @default(0)
+  pointReason String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Meme {
+  id String @id @default(uuid())
+
+  prompt  String?
+  caption String?
+  url     String
+
+  isPublished Boolean @default(false)
+  hidden      Boolean @default(false)
+
+  createdById String
+  createdBy   User   @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  favorites User[]    @relation("Favorites")
+  likes     Like[]
+  comments  Comment[]
+  views     User[]    @relation("MemeViews")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contest {
+  id String @id @default(uuid())
+
+  title            String
+  shortDescription String
+  description      String
+  rewardTitle      String
+  rewardAvatarUrl  String
+  isActive         Boolean @default(true)
+  enabled          Boolean @default(false)
+
+  contentTitle String
+
+  imageUrl  String
+  avatarUrl String
+
+  startDate    DateTime
+  endDate      DateTime
+  isEnded      Boolean  @default(false)
+  rewardAmount Float    @default(0)
+
+  contestTaskSets ContestTaskSet[]
+
+  memeConfiguration ContestMemeConfiguration?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestTaskSet {
+  id String @id @default(uuid())
+
+  contestId String
+  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  title       String
+  description String?
+
+  tasks ContestTask[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestTask {
+  id String @id @default(uuid())
+
+  contestTaskSetId String
+  contestTaskSet   ContestTaskSet @relation(fields: [contestTaskSetId], references: [id], onDelete: Cascade)
+
+  title               String
+  description         String?
+  imageUrl            String?
+  hasDetailsPage      Boolean     @default(false)
+  linkVariant         LinkVariant @default(TELEGRAM)
+  hasConfirmationForm Boolean     @default(false)
+
+  type    TaskType @default(SUBSCRIPTION)
+  url     String?
+  details String?
+
+  payload String?
+
+  contestTaskSubmissions      ContestTaskSubmission[]
+  contestTaskSubmissionFields ContestTaskField[]
+  pendingRewards              PendingReward[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestMemeConfiguration {
+  id String @id @default(uuid())
+
+  watermarkUrl      String?
+  watermarkSize     Float?
+  watermarkPosition WatermarkPosition @default(BOTTOM_RIGHT)
+
+  // MUST include the prompt placeholder as <<prompt>> to insert the user's prompt
+  prompt   String?
+  imageUrl String?
+
+  contestId String  @unique
+  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestTaskSubmission {
+  id String @id @default(uuid())
+
+  contestTaskId String
+  contestTask   ContestTask @relation(fields: [contestTaskId], references: [id], onDelete: Cascade)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  payload                     String?
+  contestTaskSubmissionFields ContestTaskSubmissionField[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestTaskSubmissionField {
+  id String @id @default(uuid())
+
+  contestTaskSubmissionId String
+  contestTaskSubmission   ContestTaskSubmission @relation(fields: [contestTaskSubmissionId], references: [id], onDelete: Cascade)
+
+  contestTaskFieldId String
+  contestTaskField   ContestTaskField @relation(fields: [contestTaskFieldId], references: [id], onDelete: Cascade)
+
+  value String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContestTaskField {
+  id String @id @default(uuid())
+
+  contestTaskId String
+  contestTask   ContestTask @relation(fields: [contestTaskId], references: [id], onDelete: Cascade)
+
+  label       String
+  description String?
+  type        FieldType
+
+  submissions ContestTaskSubmissionField[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PendingReward {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  amount Float
+  status PendingRewardStatus @default(PENDING)
+
+  taskId String?
+  task   ContestTask? @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Like {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  memeId String
+  meme   Meme   @relation(fields: [memeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Comment {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  memeId String
+  meme   Meme   @relation(fields: [memeId], references: [id], onDelete: Cascade)
+
+  text      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Ad {
+  id String @id @default(uuid())
+
+  title            String
+  description      String
+  url              String
+  imageUrl         String
+  variant          String  @default("default")
+  enabled          Boolean @default(true)
+  icon             String?
+  actionButtonText String? @default("READ MORE")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Verification {
+  id String @id @default(uuid())
+
+  title            String
+  shortDescription String?
+  description      String?
+
+  isCompleted  Boolean @default(false)
+  enabled      Boolean @default(false)
+  rewardAmount Float?
+
+  icon    String?
+  payload String?
+  url     String?
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Announcement {
+  id String @id @default(uuid())
+
+  title       String
+  url         String?
+  description String?
+  imageUrl    String?
+  variant     String  @default("default")
+  icon        String?
+
+  enabled          Boolean @default(true)
+  actionButtonText String? @default("Read")
+
+  background String? @default("linear-gradient(to right, #ffd194, #efb832)")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Game {
+  id String @id @default(uuid())
+
+  title       String
+  description String
+  imageUrl    String
+  icon        String?
+
+  enabled Boolean @default(true)
+
+  options GameOption[]
+
+  cost Float @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GameOption {
+  id String @id @default(uuid())
+
+  title       String
+  description String?
+  imageUrl    String?
+
+  rewardAmount Float?
+
+  gameId String
+  game   Game   @relation(fields: [gameId], references: [id], onDelete: Cascade)
+
+  enabled Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Popup {
+  id String @id @default(uuid())
+
+  title       String
+  description String
+  imageUrl    String
+  url         String
+  payload     String?
+
+  enabled Boolean @default(true)
+
+  popups PopupSeen[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PopupSeen {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  popupId String
+  popup   Popup  @relation(fields: [popupId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PendingMissionReward {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  missionId String
+  mission   Mission @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  amount Float
+
+  status        PendingRewardStatus @default(PENDING)
+  canClaimAfter DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Mission {
+  id String @id @default(uuid())
+
+  title             String
+  short_description String
+  description       String
+  imageUrl          String?
+
+  enabled Boolean @default(true)
+  groupId String?
+
+  reward Float @default(0)
+
+  canClaimAfterMinutes Int                    @default(0)
+  pendingRewards       PendingMissionReward[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ReferalStatus {
+  IDLE
+  ACTIVE
+}
+
+enum VerificationStatus {
+  IDLE   @map("IDEAL")
+  PASSED
+  FAILED
+
+  @@map("IsVerified")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum userStatus {
+  ACTIVE
+  BANNED
+  DELETED
+}
+
+enum Level {
+  NOOB
+  GRIFTER
+  PLOTTER
+  WHEELMAN
+  HACKER
+  CRYPTOLOGIST
+  PHANTOM
+  INFILTRATOR
+  SAFECRACKER
+  MAESTRO
+  THE_PROFESSOR
+}
+
+enum LinkVariant {
+  WEB
+  TELEGRAM
+  TELEGRAM_BACKABLE
+}
+
+enum FieldType {
+  TEXT
+  NUMBER
+  DATE
+  TIME
+  DATETIME
+  SELECT
+  RADIO
+  CHECKBOX
+  FILE
+  IMAGE
+  URL
+  EMAIL
+  PHONE
+  TEXTAREA
+}
+
+enum WatermarkPosition {
+  TOP_LEFT
+  TOP_RIGHT
+  BOTTOM_LEFT
+  BOTTOM_RIGHT
+}
+
+enum PendingRewardStatus {
+  PENDING
+  CLAIMED
+  APPROVED
+  REJECTED
+  IN_REVIEW
+  COMPLETED
+}
+
+enum TaskType {
+  CUSTOM
+  MEME_GEN
+  SUBSCRIPTION
+  REFERRAL
+  GAME
+}

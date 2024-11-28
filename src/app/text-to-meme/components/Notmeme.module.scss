@@ -1,0 +1,33 @@
+@import "../../../styles/colors.scss";
+
+.notmeme {
+  background-color: $secondary_bg_color;
+  width: 230px;
+  height: 230px;
+  padding-top: 10px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 36px;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__heading {
+    color: $text_color;
+    font-size: 15px;
+  }
+
+  &__text {
+    text-align: center;
+    color: $text_color;
+    font-size: 14px;
+  }
+}

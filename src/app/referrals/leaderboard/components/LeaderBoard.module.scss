@@ -1,0 +1,22 @@
+@import "@styles/colors.scss";
+
+.referral {
+  background-color: $bg_color;
+}
+
+.leaderboard {
+  padding: 10px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-subtitle {
+      color: $text-color;
+      opacity: 80%;
+    }
+  }
+}

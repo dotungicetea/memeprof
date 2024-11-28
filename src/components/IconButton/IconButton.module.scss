@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+.icon-button {
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--primary {
+    fill: $button_color;
+  }
+
+  &--secondary {
+    fill: $button_color;
+  }
+
+  &--error {
+    fill: $error_color;
+  }
+
+  &--success {
+    fill: $success_color;
+  }
+
+  &--warning {
+    fill: $warning_color;
+  }
+}

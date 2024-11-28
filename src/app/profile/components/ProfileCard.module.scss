@@ -1,0 +1,51 @@
+.meme {
+  &__image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &__content--active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+    z-index: 100;
+
+    &--exit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

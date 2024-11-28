@@ -1,0 +1,26 @@
+@import "../../styles/colors.scss";
+
+@keyframes textEffect {
+  0% {
+    color: $hint_color;
+    text-shadow: none;
+  }
+  50% {
+    color: $text_color;
+    text-shadow: 0 0 5px $text_color, 0 0 10px $text_color, 0 0 15px $text_color,
+      0 0 20px $text_color;
+  }
+  100% {
+    color: $hint_color;
+    text-shadow: none;
+  }
+}
+
+.read-more {
+  color: $text_color !important;
+
+  &__text {
+    color: $hint_color;
+    animation: textEffect 1s ease-in-out;
+  }
+}

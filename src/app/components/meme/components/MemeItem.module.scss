@@ -1,0 +1,124 @@
+@import "@styles/colors.scss";
+
+.meme {
+  padding: 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: $bg_color;
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+
+    &-avatar {
+      margin-right: 0.25rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__profile-content {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__image-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__follow {
+    color: $link_color;
+  }
+
+  &__footer {
+    display: flex;
+    gap: 12px;
+    padding-top: 0.125rem;
+  }
+
+  &__share {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 1px;
+  }
+
+  &__like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes likeAnimation {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+      color: $link_color;
+    }
+    25% {
+      transform: scale(1.2) rotate(15deg);
+      color: #c850c0;
+    }
+    50% {
+      transform: scale(1.4) rotate(20deg);
+      color: #c850c0;
+    }
+    75% {
+      transform: scale(1.2) rotate(15deg);
+      color: #c850c0;
+    }
+  }
+
+  @keyframes unlikeAnimation {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+      color: #fff;
+    }
+    25% {
+      transform: scale(1.2) rotate(-15deg);
+      color: #c850c0;
+    }
+    50% {
+      transform: scale(1.4) rotate(-20deg);
+      color: #c850c0;
+    }
+    75% {
+      transform: scale(1.2) rotate(-15deg);
+      color: #c850c0;
+    }
+  }
+
+  &__like-status {
+    color: $link_color;
+    animation: likeAnimation 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  &__unlike-status {
+    color: #fff;
+    animation: unlikeAnimation 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  &__follow-btn {
+    border-radius: 3rem !important;
+    padding: 0.25rem 1rem !important;
+  }
+}

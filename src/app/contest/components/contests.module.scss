@@ -1,0 +1,23 @@
+.contest {
+  padding: 0.5rem;
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 1rem;
+  }
+
+  &__tab {
+    @apply px-5 py-4 flex-1 flex items-center justify-center text-[15px] leading-none text-button_text_color select-none data-[state=active]:text-button_text_color data-[state=active]:focus:relative data-[state=active]:bg-primary outline-none cursor-default rounded-full;
+
+    // create moving item effect on tab click, not underline
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__tab-list {
+    @apply flex w-full rounded-full bg-bg_color border border-gray-50 transition ease-in-out delay-150;
+  }
+}

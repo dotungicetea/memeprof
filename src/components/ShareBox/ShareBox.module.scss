@@ -1,0 +1,81 @@
+.share {
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 0 $box_shadow;
+
+  z-index: 9999;
+  animation: showUp 0.3s ease;
+  background-color: $bg_color;
+  border-top: 1px solid $primary;
+
+  @apply rounded-3xl pt-3 pb-4  w-full fixed bottom-0 left-0;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    @apply flex flex-wrap items-center gap-2 mb-4;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 0.25rem;
+    border-radius: 12px;
+  }
+
+  &__link {
+    text-align: center;
+
+    @apply text-xs flex flex-col items-center justify-center px-2;
+
+    &__text {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  &__icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  &__close-icon {
+    path {
+      fill: $button_color !important;
+      color: white !important;
+    }
+
+    @apply w-12 h-12;
+  }
+
+  &__btn {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &__footer {
+    @apply flex justify-between items-center gap-2 my-4 mt-6;
+  }
+}
+
+.hidden {
+  position: fixed;
+  bottom: -100%;
+  transition: all 0.5s ease;
+}
+
+@keyframes showUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}

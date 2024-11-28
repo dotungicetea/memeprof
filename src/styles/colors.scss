@@ -1,0 +1,84 @@
+/*
+  * bg_color ---> var(--tg-theme-bg-color) #191819 | #ffffff
+  * secondary_bg_color ---> var(--tg-theme-secondary-bg-color) #000000 | #f0f0f0
+  * text_color ---> var(--tg-theme-text-color) #ffffff | #222222
+  * hint_color ---> var(--tg-theme-hint-color)  #7d7d7d | #a8a8a8
+  * link_color ---> var(--tg-theme-link-color)  #bc84dd | #2678b6
+  * button_color ---> var(--tg-theme-button-color) #c282e6 | #50a8eb
+  * button_text_color ---> var(--tg-theme-button-text-color) #ffffff
+*/
+
+// *** Light theme ***
+// $bg_color: #ffffff;
+// $secondary_bg_color: #f0f0f0;
+// $text_color: #222222;
+// $hint_color: #a8a8a8;
+// $link_color: #2678b6;
+// $button_color: #50a8eb;
+// $button_text_color: #ffffff;
+
+// *** Dark theme ***
+$bg_color: #191819;
+$secondary_bg_color: #000000;
+$text_color: #ffffff;
+$hint_color: #a8a8a8;
+$link_color: #2678b6;
+$button_color: #a1df24;
+$button_text_color: #ffffff;
+$header_bg_color: #242326;
+$accent_text_color: #839ef0;
+$section_bg_color: #181819;
+$section_header_text_color: #8b9ff9;
+$subtitle_text_color: #7e7e7f;
+$destructive_text_color: #ee686f;
+
+$bg_dark: #191819;
+$bg_main: #000000;
+$bg_dark_secondary: #191a19;
+$gray: #606060;
+$error: #cc267c;
+$orange: #ff7134;
+$card_gradient: linear-gradient(17deg, #a1df24, #000000);
+
+// $bg_color: var(--tg-theme-bg-color);
+// $secondary_bg_color: var(--tg-theme-secondary-bg-color);
+// $text_color: var(--tg-theme-text-color);
+// $hint_color: var(--tg-theme-hint-color);
+// $link_color: var(--tg-theme-link-color);
+// $button_color: var(--tg-theme-button-color);
+// $button_text_color: var(--tg-theme-button-text-color);
+// $header_bg_color: var(--tg-theme-header-bg-color);
+// $accent_text_color: var(--tg-theme-accent-text-color);
+// $section_bg_color: var(--tg-theme-section-bg-color);
+// $section_header_text_color: var(--tg-theme-section-header-text-color);
+// $subtitle_text_color: var(--tg-theme-subtitle-text-color);
+// $destructive_text_color: var(--tg-theme-destructive-text-color);
+
+$coin_color: #a1df24;
+$primary: #a1df24;
+$secondary: #a1df24;
+$bg_secondary: #191819;
+$tertiary_bg_color: #2a2a2a;
+$bg_color-50: rgba(26, 25, 26, 0.5);
+
+$linear_gradient: linear-gradient(-45deg, #9d50bb, #6e48aa);
+$error_color: #ff0000;
+$success_color: #00ff00;
+$warning_color: #ffff00;
+$support_icon_color: #f08c00;
+$language_icon_color: #be4bdb;
+$cache_icon_color: #868e96;
+$memepaper_icon_color: #4dabf7;
+$box_shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+
+@mixin gradient($color: $bg_color) {
+  /* From https://css.glass */
+  background: rgba($color, 0.62);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.3px);
+  -webkit-backdrop-filter: blur(8.3px);
+  border: 1px solid rgba($color, 0.41);
+}
+$border_radius: 12px;
+$box_shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.1);

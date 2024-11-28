@@ -1,0 +1,136 @@
+// list-item.module.scss
+@import "../../styles/colors.scss";
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  position: relative;
+
+  &--sm {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  &--md {
+    padding: 0.5rem 0 0.5rem 0.8rem;
+    font-size: 14px;
+  }
+
+  &--lg {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  //   &--primary {
+  //     background-color: #6200ee;
+  //     color: #ffffff;
+
+  //     &:hover {
+  //       background-color: #5600e6;
+  //     }
+  //   }
+
+  //   &--secondary {
+  //     background-color: #bdbdbd;
+  //     color: #000000;
+
+  //     &:hover {
+  //       background-color: #b3b3b3;
+  //     }
+  //   }
+
+  //   &--danger {
+  //     background-color: #f44336;
+  //     color: #ffffff;
+
+  //     &:hover {
+  //       background-color: #e53935;
+  //     }
+  //   }
+
+  //   &--success {
+  //     background-color: #4caf50;
+  //     color: #ffffff;
+
+  //     &:hover {
+  //       background-color: #43a047;
+  //     }
+  //   }
+
+  //   &--warning {
+  //     background-color: #ff9800;
+  //     color: #ffffff;
+
+  //     &:hover {
+  //       background-color: #f57c00;
+  //     }
+  //   }
+
+  &--contained {
+    border: none;
+  }
+
+  &--outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    padding: 8px 12px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--active {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &__left-icon,
+  &__right-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    color: $text_color;
+    fill: $text_color;
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding-right: 5px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $secondary_bg_color;
+    margin-left: 1rem;
+  }
+}

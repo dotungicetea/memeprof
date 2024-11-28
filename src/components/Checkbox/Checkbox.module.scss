@@ -1,0 +1,25 @@
+@import "../../styles/colors.scss";
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+
+  &__root {
+    all: unset;
+    background-color: transparent;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $button_color;
+  }
+
+  &__label {
+    color: $text_color;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}

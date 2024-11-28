@@ -1,0 +1,17 @@
+.btn {
+  @apply w-11/12 rounded-xl py-3 relative;
+
+  &__wrapper {
+    @apply flex justify-center items-center py-3 w-full;
+
+    background: rgba($bg_color, 0.7);
+
+    &--fixed {
+      @apply fixed bottom-0 left-1/2 transform -translate-x-1/2;
+    }
+  }
+
+  &--disabled {
+    @apply bg-gray-400;
+  }
+}

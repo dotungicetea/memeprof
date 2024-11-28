@@ -1,0 +1,31 @@
+export const lightTheme = {
+  bg_color: "#ffffff",
+  secondary_bg_color: "#f0f0f0",
+  text_color: "#222222",
+  hint_color: "#a8a8a8",
+  link_color: "#2678b6",
+  button_color: "#50a8eb",
+  button_text_color: "#ffffff",
+  header_bg_color: "#242326",
+  accent_text_color: "#839ef0",
+  section_bg_color: "#181819",
+  section_header_text_color: "#8b9ff9",
+  subtitle_text_color: "#7e7e7f",
+  destructive_text_color: "#ee686f",
+};
+
+export const darkTheme = {
+  bg_color: "#191819",
+  secondary_bg_color: "#000000",
+  text_color: "#ffffff",
+  hint_color: "#7d7d7d",
+  link_color: "#bc84dd",
+  button_color: "#c282e6",
+  button_text_color: "#ffffff",
+  header_bg_color: "#242326",
+  accent_text_color: "#839ef0",
+  section_bg_color: "#181819",
+  section_header_text_color: "#8b9ff9",
+  subtitle_text_color: "#7e7e7f",
+  destructive_text_color: "#ee686f",
+};

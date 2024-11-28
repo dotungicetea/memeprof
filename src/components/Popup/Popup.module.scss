@@ -1,0 +1,97 @@
+@import "../../styles/colors.scss";
+
+.card {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  right: 0;
+  z-index: 7000;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 100vh;
+
+  background-color: $bg_color !important;
+
+  &__inner {
+    color: #fff;
+    height: 400px;
+    position: absolute;
+    transform: translateY(-100%);
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 5%) 0px -20px 20px, rgb(0 0 0 / 10%) 0px -6px 6px,
+      rgb(0 0 0 / 3%) 0px -30px 30px;
+
+    background-color: $bg_color !important;
+    border-radius: 10px 10px 0 0;
+    overflow: visible;
+    top: 0;
+  }
+
+  &__inner__scrolling {
+    @apply border border-b-0
+     border-t-primary border-l-primary border-r-primary;
+
+    height: 100%;
+    width: calc(100% + 2px);
+    overflow-x: hidden;
+    transform: translateX(-1px);
+    position: relative;
+    padding: 0.5rem 0.75rem;
+
+    background-color: $bg_color !important;
+    border-top-right-radius: 1.75rem;
+    border-top-left-radius: 1.75rem;
+  }
+}
+
+.card__inner::after {
+  content: " ";
+  background: #343434;
+  width: 100%;
+  height: 100%;
+  top: 99%;
+  position: absolute;
+  left: 0;
+}
+
+.indicatorWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+
+  min-height: 3px;
+  max-height: 3px;
+}
+
+.indicator {
+  height: 3px;
+  width: 30px;
+  background: #d8d8d8;
+  border-radius: 0.3rem;
+}
+
+.keen-slider__slide {
+  min-height: auto !important;
+  overflow: visible;
+}
+
+.small {
+  box-sizing: border-box;
+  padding-top: 20px;
+  height: 90px;
+}
+
+.medium {
+  height: 90px;
+}
+
+.large {
+  padding-bottom: 20px;
+}

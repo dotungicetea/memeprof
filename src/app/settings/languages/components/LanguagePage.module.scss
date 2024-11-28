@@ -1,0 +1,25 @@
+@import "@styles/colors.scss";
+
+.language {
+  height: 100vh;
+  background-color: $bg_color;
+  padding: 16px 12px 0 12px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: $text-color;
+    opacity: 80%;
+  }
+
+  &__divider {
+    background-color: $coin_color;
+    margin-bottom: 12px;
+  }
+}

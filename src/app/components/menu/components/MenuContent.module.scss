@@ -1,0 +1,30 @@
+@import "@styles/colors.scss";
+
+.menu {
+  // @apply grid grid-cols-2 gap-4;
+
+  &__content {
+    // Set the grid for mobile view
+    @apply grid gap-3 px-3 grid-cols-6;
+
+    width: 100%;
+
+    // Target the first 3 items to span 2 columns each
+    & > a:nth-of-type(1),
+    & > a:nth-of-type(2),
+    & > a:nth-of-type(3) {
+      @apply col-span-2;
+    }
+
+    // Target the next 3 items to span 2 columns each
+    & > a:nth-of-type(4),
+    & > a:nth-of-type(5) {
+      @apply col-span-3;
+    }
+
+    & > a:nth-of-type(6),
+    & > a:nth-of-type(7) {
+      @apply col-span-3;
+    }
+  }
+}

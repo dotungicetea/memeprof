@@ -1,0 +1,81 @@
+@import "@styles/colors.scss";
+
+.bonus-content {
+  padding: 20px;
+  padding-top: 10px;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $hint_color;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $text_color;
+  }
+
+  &__list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__point {
+    color: $coin_color;
+  }
+
+  &__icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    gap: 10px;
+    background-color: $bg_color;
+    border-radius: 10px;
+    padding: 20px 10px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: $button_text_color;
+    cursor: pointer;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

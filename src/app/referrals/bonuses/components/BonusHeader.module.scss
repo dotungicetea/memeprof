@@ -1,0 +1,44 @@
+@import "@styles/colors.scss";
+
+.bonus-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+
+  &__items {
+    padding: 10px;
+    background-color: $bg_color;
+    border-radius: 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &--sticker {
+      width: 60px !important;
+      height: 60px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--text {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &--number {
+        color: $coin_color;
+      }
+    }
+    &--details {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      padding: 5px 0;
+      cursor: pointer;
+    }
+  }
+}

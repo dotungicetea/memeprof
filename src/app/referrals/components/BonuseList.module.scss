@@ -1,0 +1,58 @@
+@import "@styles/colors.scss";
+
+.bonus {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: $bg_color;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: $box_shadow;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &-sticker {
+      width: 60px !important;
+      height: 60px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-title {
+      color: $text_color;
+      font-size: 18px;
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $hint_color;
+      font-size: 16px;
+      &-number {
+        color: $coin_color;
+      }
+    }
+    &-details {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+
+      &-icon {
+        position: absolute;
+        right: 10px;
+        color: $text_color;
+      }
+    }
+  }
+}

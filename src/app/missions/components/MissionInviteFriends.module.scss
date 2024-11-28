@@ -1,0 +1,78 @@
+@import "@/styles/colors.scss";
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 16px;
+
+  &__close-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & .mission__task-count {
+      position: absolute;
+      font-size: 24px;
+      color: $text_color;
+      border-radius: 50%;
+      padding: 2px 5px;
+    }
+  }
+
+  &__task-list {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: $border_radius;
+  }
+
+  &__task-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  &__task-content-box {
+    display: flex;
+    justify-content: space-between;
+
+    & .mission__task-logo {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  &__task-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    & .mission__description {
+      color: #a8a8a8;
+      font-size: 14px;
+    }
+  }
+
+  &__claim-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__complete-icon {
+  }
+}
+
+.mission__drawer-logo {
+  width: 7rem !important;
+  height: 7rem !important;
+}
