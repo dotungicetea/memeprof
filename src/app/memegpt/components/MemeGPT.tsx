@@ -161,11 +161,11 @@ const MemeGPT: FC<MemeGPTProps> = ({ contest, task }) => {
     } else {
       const currentPrompt = promptRef?.current?.value?.trim();
 
-      if (currentPrompt) {
-        handleGenerate(currentPrompt);
-      } else {
-        show("Please enter a prompt", { variant: "error" });
-      }
+      // if (currentPrompt) {
+      //   handleGenerate(currentPrompt);
+      // } else {
+      //   show("Please enter a prompt", { variant: "error" });
+      // }
     }
   };
 
